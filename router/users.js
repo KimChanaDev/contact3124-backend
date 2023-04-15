@@ -17,6 +17,7 @@ function ensureToken(req, res, next) {
 
 // Verifly Token
 router.get('/login/verify', ensureToken, async (req, res)=>{
+  res.set('Access-Control-Allow-Origin', 'https://contact3124-3cd66.web.app');
   try {
     await jwt.verify(req.token, 'egci4276272');
     res.json({
@@ -31,6 +32,7 @@ router.get('/login/verify', ensureToken, async (req, res)=>{
 
 // Generate Token
 router.post('/login', async (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'https://contact3124-3cd66.web.app');
     const user = req.body;
     try{
       const result = await usersModel.ensureUser(user)
