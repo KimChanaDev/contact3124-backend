@@ -10,9 +10,9 @@ app.use(express.urlencoded({extended: false}))
 app.use(contactsRouter)
 app.use(usersRouter)
 
-// let server = app.listen(5000, () => {
-//     console.log('Started port at 5000')
-// })
+let server = app.listen(5000, () => {
+    console.log('Started port at 5000')
+})
 
 // server.on('close', () => {
 //     console.log('Server is shutdown')
