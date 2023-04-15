@@ -4,7 +4,6 @@ const contactsModel = require('../model/contacts.js')
 
 // show all contact
 router.get('/contacts', async (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'https://contact3124-3cd66.web.app');
     try {
         const result = await contactsModel.showAll()
         res.json( result )
@@ -16,7 +15,6 @@ router.get('/contacts', async (req, res) => {
 
 // show one contact
 router.get('/contacts/:id', async (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'https://contact3124-3cd66.web.app');
     try {
         const result = await contactsModel.showOne( req.params.id )
         res.json( result )
@@ -28,7 +26,6 @@ router.get('/contacts/:id', async (req, res) => {
 
 // add contact
 router.post('/contacts', async (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'https://contact3124-3cd66.web.app');
     try {
         await contactsModel.addContact( req.body )
         res.json( req.body )
@@ -40,7 +37,6 @@ router.post('/contacts', async (req, res) => {
 
 // update contact
 router.post('/contacts/:id', async (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'https://contact3124-3cd66.web.app');
     try {
         const updateResult = await contactsModel.updateContact( req.params.id , req.body )
         res.json( updateResult )
@@ -52,7 +48,6 @@ router.post('/contacts/:id', async (req, res) => {
 
 // delete contact
 router.delete('/contact/:id', async (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'https://contact3124-3cd66.web.app');
     try {
         const queryResult = await contactsModel.showOne( req.params.id )
         const deleteResult = await contactsModel.deleteContact( req.params.id )
